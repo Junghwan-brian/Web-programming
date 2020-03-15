@@ -1,0 +1,16 @@
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  opacity: 0.7;
+  /* 색깔에 투명도를 입히는 명령어. */
+}
+
+.status-bar i {
+  /* status-bar에 있는 icon들을 수정해준다 */
+  font-size: 14px;
+}
+
+.status-bar .status-bar__battery-level {
+  margin-left: 5px;
+}

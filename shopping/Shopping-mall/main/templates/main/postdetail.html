@@ -1,0 +1,209 @@
+{% extends "main/base.html" %}
+{% block content %}
+{% load static %}
+
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
+    style="background-image:url({% static 'images/a1.jpg' %});">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>{{post.title}}</h1>
+                        <h2>Make U better <a href="https://www.khu.ac.kr/kor/main/index.do"
+                                target="_blank">Kyunghee-univ</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="fh5co-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 animate-box">
+                <div class="owl-carousel owl-carousel-fullwidth product-carousel">
+                    <div class="item">
+                        <div class="active text-center">
+                            <figure>
+                                <img src="{{ post.img.url }}" alt="user">
+                            </figure>
+                        </div>
+                    </div>
+                    {% if post.img2 %}
+                    <div class="item">
+                        <div class="active text-center">
+                            <figure>
+                                <img src="{{ post.img2.url }}" alt="user">
+                            </figure>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if post.img3 %}
+                    <div class="item">
+                        <div class="active text-center">
+                            <figure>
+                                <img src="{{ post.img3.url }}" alt="user">
+                            </figure>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if post.img4 %}
+                    <div class="item">
+                        <div class="active text-center">
+                            <figure>
+                                <img src="{{ post.img4.url }}" alt="user">
+                            </figure>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if post.img5 %}
+                    <div class="item">
+                        <div class="active text-center">
+                            <figure>
+                                <img src="{{ post.img5.url }}" alt="user">
+                            </figure>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>{{post.title}}</h2>
+                        <p>
+                            <a href="#" class="btn btn-primary btn-outline btn-lg">Hope to buy</a>
+                            <a href="#" class="btn btn-primary btn-outline btn-lg">Investment</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{post.src}}" allowfullscreen></iframe>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="fh5co-tabs animate-box">
+                    <ul class="fh5co-tab-nav">
+                        <li class="active"><a href="#" data-tab="1"><span class="icon visible-xs"><i
+                                        class="icon-file"></i></span><span class="hidden-xs">Product
+                                    Details</span></a></li>
+                        <li><a href="#" data-tab="2"><span class="icon visible-xs"><i
+                                        class="icon-bar-graph"></i></span><span
+                                    class="hidden-xs">Specification</span></a></li>
+                        <li><a href="#" data-tab="3"><span class="icon visible-xs"><i class="icon-star"></i></span><span
+                                    class="hidden-xs">Feedback &amp;
+                                    Ratings</span></a></li>
+                    </ul>
+
+                    <!-- Tabs -->
+                    <div class="fh5co-tab-content-wrap">
+
+                        <div class="fh5co-tab-content tab-content active" data-tab-content="1">
+                            <div class="col-md-10 col-md-offset-1">
+                                <span class="price">{{post.price}}</span>
+                                <h2>{{post.title}}</h2>
+                                <p>{{post.contents}}</p>
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h2 class="uppercase">Keep it simple</h2>
+                                        <p>당신의 개성을 뽐내세요.</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h2 class="uppercase">Less is more</h2>
+                                        <p>당신의 디자이너에 투자해 주세요.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="fh5co-tab-content tab-content" data-tab-content="2">
+                            <div class="col-md-10 col-md-offset-1">
+                                <h3>Product Specification</h3>
+                                <ul>
+                                    <li>정사이즈 6버튼 싱글 코듀로이 트렌치 코트 원피스입니다.</li>
+                                    <li>골의 굵기가 일정하지 않은 빈티지한 느낌의 Thick’n Thin 코듀로이 원단을 사용하였습니다.
+                                    </li>
+                                    <li>면 원단 안단시접 테이핑 마감처리 되어있으며 소매 안감처리 되어있습니다.
+                                    </li>
+                                    <li>수입원단 사용하였습니다</li>
+
+                                    <li>어깨패드 있습니다.</li>
+                                    <li>최고급 소뿔단추 사용하였습니다.
+                                    </li>
+                                    <li>7개 사이즈 (XS, S, M, L, XL, 2XL)
+                                    </li>
+                                    <li>_총기장: 105cm
+                                        _어깨넓이: 44cm
+                                        _가슴둘레단면: 52cm
+                                        _허리둘레단면: 50.5cm
+                                        _밑단둘레단면: 50.5cm
+                                        _소매기장: 55cm
+                                        _소매통단면: 18.5cm
+                                        _소매밑단단면: 16.5cm
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="fh5co-tab-content tab-content" data-tab-content="3">
+                            <div class="col-md-10 col-md-offset-1">
+                                <h3>Want people</h3>
+                                <div class="feed">
+                                    <div>
+                                        <blockquote>
+                                            <p>真的很棒呀！符合自己的尺寸能够很好的看到，可以看到自己穿起后的样子！👍🏻👍🏻👍🏻
+                                                原来还可以这样呀～真的比其他的购物网站要方便的多。希望以后能够更加的完善～
+                                            </p>
+                                        </blockquote>
+                                        <h3>&mdash; Yang angi</h3>
+                                        <span class="rate">
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <blockquote>
+                                            <p>看着效果演示很真实，大学生的作品很有创意和想法，是适合年轻人的作品，价格也很亲民！
+                                                网页很漂亮，很喜欢！这是我见过最好的线上着装体验，符合年轻人的口味，还可以随心所欲的私人定制，真是棒极了！🎈
+                                            </p>
+                                        </blockquote>
+                                        <h3>&mdash; Go dong</h3>
+                                        <span class="rate">
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                            <i class="icon-star2"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="{% url 'update' post.pk %}"><button> 수정하기 </button></a>
+<form action="{% url 'delete' post.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제하기">
+</form>
+
+
+{% endblock %}

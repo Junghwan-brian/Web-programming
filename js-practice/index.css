@@ -1,0 +1,181 @@
+@import "clock.css";
+@import "reset.css";
+@import "saying.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  background-size: cover;
+  background-color: #636e72;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+body,
+html {
+  overflow: hidden;
+  /* height: 300%; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+body {
+  color: #0984e3;
+  /* transition: color 0.5s ease-in-out; */
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clicked {
+  color: #2d3436;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.toDoList li i:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.fa,
+.far,
+.fas {
+  font-family: "Font Awesome 5 Free";
+}
+
+.form,
+.greetings {
+  display: none;
+  font-family: "Nanum Pen Script";
+  font-size: 60px;
+  color: white;
+}
+
+.name {
+  margin-bottom: 30px;
+}
+
+.greetings {
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+input {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid white;
+  font-size: 23px;
+  outline: 0;
+  text-align: center;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+  font-style: italic;
+}
+
+.toDoList {
+  color: white;
+  list-style: none;
+  bottom: 100220px;
+}
+
+.showing {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 0.5s linear;
+  background-position: center center;
+}
+
+.bgImage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent 100%);
+}
+
+.weather {
+  color: white;
+  opacity: 0.7;
+  font-size: 20px;
+  font-weight: 600;
+  bottom: 30px;
+  left: 30px;
+  position: absolute;
+  font-style: italic;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 12px;
+  }
+  .saying h2 {
+    width: 90%;
+  }
+  .clock-list h1 {
+    font-size: 7em;
+  }
+  .clock-list span {
+    letter-spacing: 0.2em;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .saying h2 {
+    width: 90%;
+    font-size: 1.5em;
+  }
+  .saying span {
+    font-size: 1.3em;
+  }
+  .clock-list h1 {
+    font-size: 4em;
+  }
+  .clock-list span {
+    letter-spacing: 0;
+    padding-bottom: 0.2em;
+    font-size: 1.1em;
+  }
+}

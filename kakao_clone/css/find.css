@@ -1,0 +1,43 @@
+.find {
+  margin-top: 50px;
+}
+
+.find .find__header-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.find .find__header-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.find__header-list .header-btn__icon {
+  font-size: 12px;
+  display: block;
+}
+
+.find .header-btn__title {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.find .find__recommend {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #f7f7f7;
+}
+
+.find__recommend img {
+  margin-left: 30px;
+  margin-right: 20px;
+  width: 50px;
+  border-radius: 20%;
+}
+
+.find .find__title {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}

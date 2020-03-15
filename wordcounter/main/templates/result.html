@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <!-- ... -->
+</head>
+
+<style>
+    body {
+        font-family: 'Open Sans'
+    }
+</style>
+<title>Result</title>
+</head>
+
+<body>
+    <h1 class="total">총 {{ total }}개의 단어로 구성되어 있습니다.</h1><br>
+    <a href="{% url 'home' %}">
+        <span class="badge badge-pill badge-danger">돌아가기</span>
+    </a>
+
+    <h1 id='fulltext'>원문</h1>
+    <div id='fullbox'>
+        "{{ fulltxt }}"
+    </div>
+    <br>
+    <h1>단어</h1>
+    <div class='exp'>
+    </div>
+<<<<<<< HEAD
+=======
+    <h1>단어</h1>
+    <h3>최빈 단어:</h3><i class="fas fa-crown"></i>&nbsp&nbsp
+    <h3>&nbsp가장 긴 단어:</h3><i class="fas fa-thumbs-up"></i>
+>>>>>>> f7e081fde10a8484bb2e3eab73154f1249a7bc72
+    {% for k,v in word_dic %}
+    {% if v < max_val and k != long_word %}
+    <div class="col-sm-3">
+        {{k}} : {{v}} <br>
+    </div>
+    {% elif v == max_val and k == long_word %}
+    <div class="col-sm-3" id='reward_long'>
+        <i class="fas fa-crown"></i>
+        <i class="fas fa-thumbs-up"></i>
+        {{k}} : {{v}} <br>
+    </div>
+    {% elif v == max_val and k != long_word %}
+    <div class="col-sm-3" id='reward'>
+        <i class="fas fa-crown"></i>
+        {{k}} : {{v}} <br>
+    </div>
+    {% else %}
+    <div class="col-sm-3" id='long'>
+        <i class="fas fa-thumbs-up"></i>
+        {{k}} : {{v}} <br>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

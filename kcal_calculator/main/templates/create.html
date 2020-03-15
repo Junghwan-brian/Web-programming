@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>칼로리 계산 홈페이지</h1>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}{{form.as_p}}
+    <input type="submit" value="올리기">
+</form>
+{% endblock %}

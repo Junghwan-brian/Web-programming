@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+<section id="container">
+  <header id="header">
+    <div id="icon">
+      <img src="{% static 'img/bookmark.png' %}" alt="북마크아이콘" />
+    </div>
+    <div>bookmark</div>
+  </header>
+  <section class="btn_container">
+    <button class="home">
+      <a href="{% url 'bookmark:list' %}" class="home">HOME</a>
+    </button>
+    <button class="create active">
+      <a href="{% url 'bookmark:new' %}">CREATE</a>
+    </button>
+  </section>
+  <section id="edit_container">
+    <form action="" method="POST" enctype="multipart/form-data">
+      <!-- form.as_p는 폼을 보이게 해준다 -->
+      <!-- form은 form.py에서 지정해줬는데 거기서 지정해준 형식으로 (admin에서 볼 수 있는 형식처럼) 보인다. -->
+      <!-- 그러므로 이 페이지에서 따로 title등 입력하는 textarea 같은 것을 만들 필요가 없다. -->
+      {% csrf_token %} {{ form.as_p }}
+      <input class="create" type="submit" value="수정" />
+    </form>
+  </section>
+</section>
+{% endblock %}

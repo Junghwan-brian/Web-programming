@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    Username:
+    <input type="text" name='username'>
+    <br>
+    Password:
+    <input type="password" name='password1'>
+    <br>
+    Confirm Password:
+    <input type="password" name="password2">
+    <br>
+    Name:
+    <input type="text" name=name>
+    <br><br>
+    <input type="submit" value="가입">
+</form>
+
+{% endblock %}

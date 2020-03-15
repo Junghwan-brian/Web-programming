@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .col-sm-6 {
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+
+        .col-sm-4 {
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>hello world</h1>
+            </div>
+            <div class="col-sm-6">
+                <h1>hello world</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- 각각에 칼럼을 4로 줘서 총 12칼럼이므로 12-8=4컬럼이 남는데, offset-sm-2을 줘서 앞에 2칼럼을 그냥 빈공간으로 주게된다. -->
+            <div class="col-sm-4 offset-sm-2">
+                <!-- display는 글자 크기,선명도를 조절하는 것 같다 -->
+                <h1 class="display-4">hello world
+                    <small class="text-muted">테스트</small>
+                </h1>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center lead">hello world</p>
+                <p class="text-center lead">복사를 하고 싶으시다면<kbd>ctrl + s</kbd>를 눌러주세요.</p>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

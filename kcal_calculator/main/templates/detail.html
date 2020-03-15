@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{{post.title}}
+{% if post.image %}
+<img src="{{post.image.url}}" alt="">
+{% endif %}
+{{post.kcal}}
+
+{{post.date}}
+
+
+{% endblock %}

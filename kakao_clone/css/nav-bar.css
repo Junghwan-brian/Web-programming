@@ -1,0 +1,54 @@
+.nav {
+  position: fixed;
+  background-color: #fcfcfc;
+  width: 100%;
+  padding: 20px 50px;
+  left: 0px;
+  bottom: 0px;
+  border-top: 1px solid #f7f7f7;
+}
+
+.nav .nav__list {
+  /* 가로로 정렬하기 위해서 flex를 쓴다 */
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav i {
+  font-size: 20px;
+}
+
+.nav .nav__list-link {
+  position: relative;
+}
+
+.nav .nav__badge {
+  /* absolute가 위에 relative된 링크에 대해 상대적인 위치로 결정된다. */
+  position: absolute;
+  top: -10px;
+  right: -7px;
+  color: white;
+  background-color: #dc5d46;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+@keyframes shownavbar {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.nav {
+  transform: translateY(80px);
+  animation: shownavbar 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}

@@ -1,0 +1,243 @@
+.header-wrapper {
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+  /* z-index가클수록 위로 올라오게된다. 설정하지 않으면 0으로 인식한다. */
+  top: 0px;
+  padding: 5px 0px;
+  width: 100%;
+}
+.chat__write-container {
+  position: fixed;
+  bottom: 0px;
+  /* position: fixed;일때 가운데 정렬하는 방법은 밑의 세개를 설정하는것이다. */
+  margin: 0 auto;
+  /* margin:0 auto; centers elements only when they have a 'width' */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+  /* box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025); */
+  /* 박스 그림자는 Stripe사이트에서 복사해왔다. */
+}
+
+@keyframes float {
+  0% {
+    /* transform: translateY(-60px); */
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+  50% {
+    /* transform: translateY(-70px); */
+    box-shadow: 0 30px 60px -60px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+  100% {
+    /* transform: translateY(-60px); */
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+}
+
+.chat__write {
+  margin: 0 auto;
+  /* marginauto 는 양옆의 공간을 맞춰서 중앙정렬 해준다. */
+  bottom: 0px;
+  width: 100%;
+  border-radius: 0%;
+  padding: 20px 60px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+  transform: translateY(-50px);
+  border-radius: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  animation: float 3s ease-in-out infinite forwards;
+}
+
+.chat__icon {
+  font-size: 18px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.chat__write:focus ~ .chat__icon {
+  /* HTML에서 아이콘이 input 다음에 있어야만 transition을 사용할 수 있다. */
+  /* 물결표시는 chat__Write(input) 다음에 있는 siblings를 선택하는 것이다. */
+  opacity: 0;
+  /* display: none;으로 하면 글씨를 입력할 때 아이콘이 사라지며 다른 transition을 사용못하지만 
+  opacity로 설정하면 다른 transition을 사용할 수 있다. */
+}
+.chat__icon-left {
+  position: absolute;
+  left: 10px;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 10px;
+}
+
+/* .chat__write-column:nth-child(2) {
+  width: 80%;
+} */
+
+/* .chat__write-column input {
+  padding: 20px 10px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+}
+
+.chat__write-column input:focus {
+  outline: none;
+} */
+
+.chats-body {
+  min-height: 1000vh;
+  /* 이것은chat이설정된 div에 viewport(screen)에 100%높이를 주는것이다. 이 경우에는
+  아래설정한 배경화면이 전체에 설정되도록 해준다. */
+  background-image: url("../images/chat.png");
+  /* padding: 10px 0px;
+  padding-top: 100px; */
+  padding: 10px 0px;
+  padding-top: 100px;
+}
+
+.chats-body .header,
+.chats-body .status-bar {
+  padding: 0px 20px;
+}
+
+.chat-screen .chat__messages {
+  border-top: 1px solid #f7f7f7;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 20px;
+  padding-top: 30px;
+}
+
+.chat__messages .chat__timestamps {
+  background-color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px #a1a1a1;
+  text-transform: uppercase;
+  /* uppercase는 모든 문자를 대문자로 만들어준다. */
+  font-weight: 700;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.message .message__content {
+  width: 50%;
+}
+
+.incoming-message {
+  align-self: flex-start;
+}
+
+.sent-message {
+  align-self: flex-end;
+}
+
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+.incoming-message img {
+  width: 30px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(2, 1, 1, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  border-radius: 15px;
+  margin-right: 20px;
+  animation: spin 1s linear forwards;
+}
+
+.message .message__bubble {
+  background-color: white;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(2, 1, 1, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: block;
+  /* span이 block요소가 아니라 text로 인식해서 text의 마진을 인식하지 못해서 따로 블록지정을 해줬다. */
+  /* 또한 블록지정을 안할경우 박스가 text에 맞춰서 늘어나지 않았던 문제가 해결됐다. */
+}
+
+.incoming-message .message__author {
+  display: block;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.incoming-message .message__bubble {
+  border-bottom-left-radius: 0px;
+  color: white;
+  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  /* to right을 안적으면 그냥 위에서 아래로 색이 바뀐다. */
+}
+
+.sent-message .message__bubble {
+  border-bottom-right-radius: 0px;
+  color: white;
+  background-image: linear-gradient(to right, #00b4db, #0083b0);
+}
+
+@keyframes incomingAni {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 100;
+    transform: none;
+  }
+}
+
+.incoming-message {
+  animation: incomingAni 1s ease-out forwards;
+}
+
+@keyframes sentAni {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 100;
+    transform: none;
+  }
+}
+
+.sent-message {
+  animation: sentAni 1s ease-out forwards;
+  /* forwards요소는 애니메이션이 끝나도 위에서 지정한 값들이 유지된다는 뜻이다. */
+}

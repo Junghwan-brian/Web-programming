@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{% static 'img/home-bg.jpg' %}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Junghwan Blog</h1>
+                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<form action="" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}{{ form.as_p }}
+    <input type="submit" value="추가" />
+</form>
+
+
+{% endblock %}

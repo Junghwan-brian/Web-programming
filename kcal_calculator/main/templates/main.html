@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <h1>칼로리 계산 홈페이지</h1>
+    <h3>먹은 총 칼로리: {{total_kcal}} kcal</h3>
+    <article>
+        <span id='img'>
+            {% for post in posts %}
+            <h2>{{post.title}}</h2> <br>
+            {% if post.image %}
+            <div><img src="{{post.image.url}}" alt=""> <br>
+            </div>
+            {% endif %}
+            {{post.date}} <br>
+        </span>
+        <span id='info'>
+            <a href="{% url 'detail' post.pk %}"><button>상세보기</button></a>
+            <form action="{% url 'delete' post.pk %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" value="삭제">삭제</button>
+            </form>
+            <a href="{% url 'update' post.pk %}">
+                <button>수정하기</button>
+            </a>
+            <a href="{% url 'post_like' post.pk %}">
+                <i class="fas fa-thumbs-up" id='imo'>좋아요!</i>
+                {{post.total_likes}}
+            </a>
+        </span>
+    </article>
+</section>
+<br> <br>
+{% endfor %}
+{% endblock %}
